@@ -1,0 +1,213 @@
+![](http://i.imgur.com/VEmWGyZ.jpg)
+###<center>SRI LANKA INSTITUTE OF INFORMATION TECHNOLOGY
+##<center>Enterprise Standards and Best Practices for IT Infrastructure
+
+####<center>4th Year 2nd Semester 2016
+
+#####Name: Madhushi Pabasara K.
+#####SLIIT ID: IT13061180
+#####Practical Session: WD Friday  
+#####Practical Number: Lab 4
+#####Date of Submission: 
+
+
+----------
+#####Getting Started with ESXi 5
+1st need to add new virtual machine on top of the current Operation System.<br>
+for that get the VMware Workstation and **Create a new virtual machine**.
+
+![](http://i.imgur.com/yfj6qOy.png)
+then tick the **Typical**. and go **next**.
+
+![](http://i.imgur.com/uo5PnVS.png)
+Then need to install the baremetal OS.<br> 
+browse the baremetal installer to the **installer disk image file**,
+
+![](http://i.imgur.com/uFpxqJO.png)
+
+![](http://i.imgur.com/yFEpToN.png)
+
+![](http://i.imgur.com/EZNWwC2.png)
+
+and go **next**.
+![](http://i.imgur.com/PK6WRBN.png)
+
+Choose **Store virtual disk as a single file**. go **next**.
+![](http://i.imgur.com/pXBzO8U.png)
+
+Then **Finish**.
+![](http://i.imgur.com/Skr6lZe.png)
+
+ Below screen shot comes when you start your server. From this menu, choose the first option to start the ESXi 5 installer.
+![](http://i.imgur.com/f4Fpg1g.png)
+
+After you choose the installation option, the installer provides you with a window that details the status of each file that needs to be loaded.
+![](http://i.imgur.com/lr1gRFy.png)
+
+Below, you can see a screen that shows you some information about your server, including the processor type and system RAM.
+![](http://i.imgur.com/29LnDVa.png)
+
+Then you can see a dialog **Welcome to the VMware ESXI Installation** and to continue with the installation, press **Enter** on your keyboard.
+![](http://i.imgur.com/R8s4UMR.png)
+
+Then you can see the **End user license agreement** to accept the agreement press **F11**.
+![](http://i.imgur.com/IJzCvrk.png)
+
+Then we have to choose a location to install ESXi 5.<br>
+you can see that I have a single 40 GB volume from which to choose as an install location on my machine.<br> Then press **Enter**.
+![](http://i.imgur.com/J2xL7sm.png)
+
+As the keyboard layout choose the US default option.<br> press **Enter**.
+![](http://i.imgur.com/qTMAIth.png)
+
+Then provide a password for the root user account.<br>press **Enter**.
+![](http://i.imgur.com/O2AuQlz.png)
+
+Then the ESXi installer scans the system to get additional information.
+![](http://i.imgur.com/0qeya6p.png)
+
+Then ask to confirm install.<br> Press **F11** button to install.
+![](http://i.imgur.com/t6EJlBu.png)
+
+installation status will be shown next.
+![](http://i.imgur.com/eN5ToQd.png)
+
+Then the **installation complete** dialog box will be shown.<br> to **Reboot** ,press **Enter**.
+![](http://i.imgur.com/eFOY4yu.png)
+
+![](http://i.imgur.com/jJtbJs2.png)
+
+Get the IP address shown in below.
+![](http://i.imgur.com/tr9k6O5.png)
+
+Get the command prompt and type **ping 192.168.127.129**.
+![](http://i.imgur.com/ocshx4S.png)
+
+then you can see the replies getting from the server.
+![](http://i.imgur.com/xuVfyh7.png)
+
+####Install the vSphere Client
+Get the IP address and search in a web browser.<br>There you can download the vSphere client.
+![](http://i.imgur.com/vI239eL.png)
+
+Execute the client software installation routine.
+![](http://i.imgur.com/4oImZkP.png)
+
+Then VMware vSphere client is installing.
+![](http://i.imgur.com/l185Qwp.png)
+
+**You’ve installed the hypervisor – ESXi5 and a management tool – vSphere Client**.<br>
+
+Start the vSphere client.<br> 
+Provide the **ip** address for your ESXi5 host and also provide the **root** user name and password that you specified during the setup of your server.
+![](http://i.imgur.com/ZSeeLpH.png)
+
+After login to the VMware vSphere client you can get  a security warning like below.This is basically telling you that the SSL certificate being used by the ESXi host can’t be trusted.Since you just installed the ESXi server,you can click on the **ignore** button.
+![](http://i.imgur.com/C9JdJxm.png)
+
+this is the interface after clicking the **ignore** button.
+![](http://i.imgur.com/vM7C8IG.png)
+
+Then click on the **Inventory**.<br> Then there are several tabs.<br>Getting started tab is in this interface.
+![](http://i.imgur.com/4Ouz8DE.png)
+
+Summary tab
+![](http://i.imgur.com/cFJYIeh.png)
+
+Virtual machines tab
+![](http://i.imgur.com/gCHKOo6.png)
+
+Resource allocation tab
+![](http://i.imgur.com/AzoshsV.png)
+
+Performance tab
+![](http://i.imgur.com/IK125Wt.png)
+
+Configuration tab
+![](http://i.imgur.com/gI3x6yh.png)
+
+Local users and groups tab
+![](http://i.imgur.com/9Q9cQWW.png)
+
+Events tab
+![](http://i.imgur.com/D6F0LZO.png)
+
+Permissions tab
+![](http://i.imgur.com/XHISTJQ.png)
+
+In summary tab, there is a resource called **storage**.<br>
+right click on the **database** and select **Browse datastore**.
+
+![](http://i.imgur.com/SrRbP6x.png)
+
+In **datastore browser**, there is an icon in navigation pane.(4th icon).<br>
+click on that icon and select **Upload File**.
+
+![](http://i.imgur.com/SQ7LRTX.png)
+
+select the available linux/windows image file.<br>
+Here I was uploaded the kali linux image file to the data store.
+![](http://i.imgur.com/XXq427I.png)
+
+![](http://i.imgur.com/M8iqgSK.png)
+
+Then right click on the ip address shown in the top left corner.<br>
+Select **New virtual Machine**.
+![](http://i.imgur.com/FuYGT2F.png)
+
+Then we create a new virtual machine using usual steps.
+<br>Choose **Typical**.<br>
+Click **next**.
+![](http://i.imgur.com/nedes3T.png)
+
+Give a specific name for this virtual machine.
+![](http://i.imgur.com/VQuTNjv.png)
+
+Then choose the data store.<br>Click **next**.
+![](http://i.imgur.com/vi7s8zU.png)
+
+Specify the guest operating system to use with this virtual machine.
+I choose the **Linux** because i chose the kali linux image file.<br>
+Click **next**.
+![](http://i.imgur.com/YA0HfIk.png) 
+
+Specify the Adapter as **E1000** and tick the **Connect at power on**.<br>
+The **E1000** is an emulated version of the Intel 82545EM Gigabit Ethernet adapter. Not all guest operating systems include support for this adapter.
+![](http://i.imgur.com/y9VHtid.png)
+
+Specify the virtual disk size and provisioning policy.<br>
+As the Provision I selected the **Thin provision**.<br>
+Then **next**.
+![](http://i.imgur.com/c1rArv6.png)
+
+click **next**.
+![](http://i.imgur.com/9wPFbK4.png)
+
+Then you can see the kali_linux instance has been created under the ip address top left corner.<br>
+Right click on that instance and go to **Edit Settings**.
+![](http://i.imgur.com/OnGwOmt.png)
+
+Then click on the **CD/DVD drive 1**.<br>
+In the right side you can see the **Datastore ISO file**.<br>Tick on that and browse the **kali linux image file** inside the **datastore1**.
+![](http://i.imgur.com/Xu7sfBm.png)
+
+![](http://i.imgur.com/Py2fiqB.png)
+
+![](http://i.imgur.com/qcWxyiT.png)
+
+Then go to **Getting started** tab and **Start the virtual machine**.<br>
+Then go to **Console** tab.<br>
+Then you can see the kali_linux virtual machine is getting started.
+![](http://i.imgur.com/6jxMIwC.png)
+
+![](http://i.imgur.com/o2QBoKM.png)
+
+
+
+
+
+
+
+
+
+
